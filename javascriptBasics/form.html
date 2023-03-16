@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <link rel="stylesheet" href="formstyle.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body>
+    <header>😉JAVASCRIPT BASICS IN DOM
+
+        <a href="about.html" class="btn border-dark p-2">about</a>
+        <a href="index.html" class="btn border-dark p-2">home</a>
+
+    </header>
+    <main>
+        <h4>Feedback Form</h4>
+
+        <form class="p-3" name="Feedback_form">
+            <div class="d-flex">
+                <label for="nameTXT"></label>
+                <input type="text" placeholder="enter your name here...." id="nameTXT" name="fullName">
+            </div>
+            <div class="d-flex" id="radiodiv">
+                <div class="d-flex p-2">
+                    <input type="radio" name="radioForm" value="Angular" id="radio1">
+                    <label for="radio1">Angular</label>
+                </div>
+                <div class="d-flex p-2">
+                    <input type="radio" name="radioForm" value="React" id="radio2">
+                    <label for="radio2">React</label>
+                </div>
+                <div class="d-flex p-2">
+                    <input type="radio" name="radioForm" value="FullStack" id="radio3">
+                    <label for="radio3">FullStack</label>
+                </div>
+            </div>
+            <div class="d-flex">
+                <input type="email" name="Email" placeholder="enter the mail here..." id="email">
+            </div>
+            <div class="d-flex">
+                <textarea name="textarea" placeholder="type your commands here...." id="" cols="40"></textarea>
+            </div>
+            <!-- <div class="text-center">
+                <div class="chk1">
+                    <lable><input type="checkbox" name="" id="">
+                    HTML</lable>
+                </div>
+                <div class="chk2">                                          // for learning checkbox properties.......
+                    <lable><input type="checkbox" name="" id="">
+                    CSS</lable>
+                </div>
+                <div class="chk3">
+                    <lable><input type="checkbox" name="" id="">
+                    JAVASCRIPT</lable>
+                </div>
+            </div> -->
+
+            <!-- <div >
+                <select class="selectTAG" name="selectTag" id="">
+                    <option value="1">one</option>
+                    <option value="2">two</option>
+                    <option value="3">three</option>
+                    <option value="4">four</option>
+                </select>
+            </div> -->
+            <div>
+                <input type="checkbox" name="terms" id="chkbox"></label>
+                <label for="chkbox"> accept the <a href="#">terms and conditions</a>
+            </div>
+            <div>
+                <button class="btn btn-outline-primary">sumbit</button>
+            </div>
+            <div id="response"></div>
+
+        </form>
+    </main>
+
+    <script src="form.js"></script>
+</body>
+
+</html>

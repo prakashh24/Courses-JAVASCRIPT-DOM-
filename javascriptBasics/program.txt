@@ -1,0 +1,286 @@
+
+// // -----------------------------------(20)--------------------------------------
+// let inputTxt = document.getElementById("inptext");
+// let inpubtn = document.getElementById("inpubtn");
+// let NewList  = document.getElementById("NewList");
+// console.log(inputTxt);
+// console.log(inpubtn);
+// console.log(NewList);
+
+
+// // create li 
+
+// // inpubtn.addEventListener('click', () => {
+// //     let li = document.createElement("li")
+// //     console.log(li);
+// //     li.className="listnew"
+// //     let inptextnode = document.createTextNode(inputTxt.value);
+// //     li.append(inptextnode)
+// //     console.log(li);
+// //     NewList.append(li)
+// // })
+
+// inpubtn.addEventListener('click', ()=>{
+//     let AddedLi =document.createElement("li");
+//     AddedLi.className="listnew "
+//     let AddListItemDIV = document.createElement("div");
+//     let AddRemovediv = document.createElement("div");
+//     let inptextnode = document.createTextNode(inputTxt.value);
+//     AddListItemDIV.append(inptextnode)
+//     AddedLi.append(AddListItemDIV,AddRemovediv);
+//     console.log(AddedLi);
+//     AddRemovediv.setAttribute('onclick',"removeList(event)")
+//     AddRemovediv.innerHTML = `X`;
+//     NewList.append(AddedLi);
+
+
+
+// })
+
+
+// // InsertDOM as String"".......(21).................
+
+// let NewList = document.getElementById("NewList");
+
+
+// NewList.insertAdjacentHTML("afterbegin","<li>List-items</li>");
+// NewList.insertAdjacentHTML("afterend","List-items");
+
+
+// //before
+// NewList.insertAdjacentHTML("beforebegin","<li>List-items</li>");
+// NewList.insertAdjacentHTML("beforeend","<h3>List-items</h3>");
+
+// //insertAdjacentText
+// NewList.insertAdjacentText("afterbegin","<li>List-items</li>");   //element donot works.................
+//  const li = document.createElement("li");
+//  li.textContent ="Added List"
+//  li.className = "listnew"
+// //  NewList.insertAdjacentElement('beforebegin',li)
+//  NewList.insertAdjacentElement('afterbegin',li)
+// //  NewList.insertAdjacentElement('aftereend',li)
+// // NewList.insertAdjacentElement('beforeend',li)
+
+//-----------------------Replacing DOM elements using JavaScript   ..........(22).......
+
+
+// // addEventListener('click', () => {
+
+// //     let NewList = document.getElementById("NewList");
+// //     let repalceLi = document.querySelector("#NewList :first-child");
+// //     console.log(repalceLi);
+// //     const li = document.createElement("li");
+// //     li.textContent = "Added List";
+// //     li.className = "listnew";
+// //     repalceLi.replaceWith(li);
+
+// // })
+// function replace(){
+//         let NewList = document.getElementById("NewList");
+//     let repalceLi = document.querySelector("#NewList :first-child");
+//     console.log(repalceLi);
+//     const li = document.createElement("li");
+//     li.textContent = "Added List";
+//     li.className = "listnew";
+//     // repalceLi.replaceWith(li);
+//     // repalceLi.parentNode.replaceChild(li,repalceLi) // old method to replace .............
+//     let text1 = document.createElement("li");
+//     text1.textContent="Child1"
+//     text1.className ="listnew"
+//     let text2 = document.createElement("li");
+//     text2.textContent="Child2"
+//     text2.className ="listnew"
+//     NewList.replaceChildren(text1,text2)
+
+// }
+
+
+// // How to do cloning DOM elements........................(23) --(24).----------------
+// function replace(){
+// let NewList = document.getElementById("NewList");
+
+// console.log(NewList.children);
+
+// // cloneNode(false)====== return only the base element or the current element, ad by default, it is in cloneNode(false) is false
+// CloneListdefault = NewList.cloneNode();
+// CloneListTrue = NewList.cloneNode(true);
+// console.log(CloneListdefault);
+// console.log(CloneListTrue);
+// let cloneEl = document.getElementById("cloneData"); 
+// cloneEl.innerHTML=''  // set the clone div empty for the next loop irration
+// cloneEl.append(CloneListTrue); 
+// }   
+// function removeList(val){
+//     existingLi =val.target.parentNode
+//     // console.log(existingLi);                      // remove method
+//     //remove
+//     // existingLi.remove();
+//     existingLi.parentNode.removeChild(existingLi); // old method......
+
+// }
+//     //to exceute this uncommand the (20) at the top............................................ 
+
+// ==============Loop over the DOM elements...........(25).........
+
+// let courses = [
+//     "HTML","CSS","JAVASCRIPT","ANGULAR","REACT"
+// ];                                                            // simple example for (for..of loop)===========
+// for(const course of courses){
+//     console.log("Topics: "+course);
+// }   
+//   ===============looping over the elements....................
+// let arrayli = document.querySelectorAll(".NewList li div");
+// console.log(arrayli);
+// let newArr =[];
+
+// for(let arr of arrayli){
+//     // console.log(arr.innerText);
+
+//     newArr.push(arr.innerText);
+// }
+// console.log(newArr);
+
+// //forEach..............
+
+// let liarray = [...arrayli].forEach((val) => {
+//     console.log(val.innerText);
+// });
+
+// console.log(liarray);  // forEach dont return the values...........
+
+// // map method...........
+// let liarray1 = [...arrayli].map((val) => {
+//     return (val.innerText);
+// });
+
+// console.log(liarray1);  // map return the values...........
+
+// //looping using ........ array from 
+// const arrayfromLoop = Array.from(arrayli).map((val)  =>{
+//     console.log(val.innerText);
+// })
+
+
+
+//===================================================traversing between the DOM elements.....
+//=========================html body content........
+
+<!-- Alert -->
+  <!-- <div class="alert text-center text-danger">
+    <strong>✅alert message</strong>
+  </div> -->
+  <!-- <header>😉JAVASCRIPT BASICS IN DOM</header>
+  <main id="main">
+    <p id="getEle_ID">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <input type="text" name="text" id="inptext">
+    <button class="btn btn-info" id="inpubtn">Add List</button>
+<div>
+    <ul id="NewList" class="NewList">
+      <li class="listnew">
+        <div  >HTML</div>
+        <span  onclick="removeList(event)">X</span>
+      </li>
+      <li class="listnew">
+        <div >CSS</div>
+        <span  onclick="removeList(event)">X</span>
+      </li>
+      <li class="listnew">
+        <div >JAVASCRIPT</div>
+        <span  onclick="removeList(event)">X</span>
+      </li>
+    </ul>
+
+   
+    <div id="cloneData"></div>
+    <button class="btn btn-info" onclick="replace()" > click</button>
+  </div> -->
+ <!-- <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.Iure ullam distinctio dolorem tenetur aliquid dolorum minus quis fuga aperiam ad officiis voluptatum dolor perspiciatis dicta voluptas, consequuntur similique vitae dignissimos.
+    </div> -->
+   <!-- siblings -->
+   <!-- <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  </main>
+
+  <script src="insertingDOMasString.js"></script> -->
+
+
+
+
+
+
+=====================================================================================================================================================
+
+
+
+
+
+
+  
+  <!-- Alert -->
+  <!-- <div class="alert text-center text-danger">
+    <strong>✅alert message</strong>
+  </div> -->
+  <header>😉JAVASCRIPT BASICS IN DOM
+    <!-- addEventListener examples -->
+    <!-- <span class="btn border-dark p-3" onclick="alert('hai')">other</span> -->
+    <!-- <span class="btn border-dark p-3" onclick="console.log(event)">other</span> -->
+    <a href="about.html" class="btn border-dark p-2">about</a>
+    <a href="form.html" class="btn border-dark p-2">form </a>
+  </header>
+  <main id="main">
+    <p id="getEle_ID">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <input type="text" name="text" id="inptext">
+    <button class="btn btn-info" id="inpubtn">Add List</button>
+    <div>
+      <ul id="NewList" class="NewList">
+        <li class="listnew">
+          <div>HTML</div>
+          <span onclick="removeList(event)">X</span>
+        </li>
+        <li class="listnew">
+          <div>CSS</div>
+          <span onclick="removeList(event)">X</span>
+        </li>
+        <li class="listnew">
+          <div>JAVASCRIPT</div>
+          <span onclick="removeList(event)">X</span>
+        </li>
+      </ul>
+
+    <button class="btn border-dark" onclick="showdiv()">show</button>
+     <!-- <div class="inputdiv ">
+    <input type="text" data-place="chennai" class="inputTXT" data-user="prakash" name="text-Input" value="NewText" id="text_id">
+   </div> -->
+
+      <!-- <div id="cloneData"></div>
+    <button class="btn btn-info" onclick="replace()" > click</button>
+  </div> -->
+      <!-- <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.Iure ullam distinctio dolorem tenetur aliquid dolorum minus quis fuga aperiam ad officiis voluptatum dolor perspiciatis dicta voluptas, consequuntur similique vitae dignissimos.
+    </div> -->
+
+      <!-- event Bubbling and capturing -->
+      <!-- <form class="form" action="">form
+      <div>div
+
+        <p>para</p>
+      </div>
+      
+    </form> -->
+      <!-- end -->
+
+      <!-- PreventDefault  -->
+
+
+
+
+
+  </main>
+
+  <script src="eventlistener.js"></script>

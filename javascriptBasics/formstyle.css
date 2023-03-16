@@ -1,0 +1,36 @@
+header{
+    text-align: center;
+    background-color: rgb(14, 204, 204);
+}
+body{
+    height: 100vh;
+}
+main{
+    background-color: azure;
+    /* text-align: center; */
+    padding: 20px;
+    
+}
+main form{
+    color: grey;
+    margin: auto;
+    border-radius: 5px;
+    padding: 5px;
+    background-color:rgb(255, 255, 255);
+    border:  1px solid grey;
+    text-align: center;width: 50%;
+}
+
+main form input,textarea {
+    width: 90%;
+    border:  1px solid rgb(236, 228, 228);
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    /* outline: none; */
+    margin-bottom: 1%;
+}
+main form input[type='checkbox']{
+    width: 5%;
+    /* text-align: left; */
+    margin-bottom: 0%;
+}

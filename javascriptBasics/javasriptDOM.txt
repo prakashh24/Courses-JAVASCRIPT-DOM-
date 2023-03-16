@@ -1,0 +1,85 @@
+// let a = [1,2,3,3,33,34,34,35,33];
+// console.log(a.indexOf(34))
+
+// //  for(let arr of a){
+// //      console.log(arr")
+// //  }
+// let new_arr =(a.filter((el) =>{
+//     return el
+//     // console.log(el);
+//     }))
+// let new_arr1= new Set(new_arr);
+
+// console.log(new_arr1);
+// console.log([...new_arr1]);
+
+
+let students =[
+    { name:"Sam",id: 100},
+    { name:"Sam",id: 100},
+    { name:"Sam",id: 100},
+    { name:"Sendhil",id: 101},
+    { name:"Shiva",id: 102},
+    ];
+ 
+    let [...new_students] =students.filter((el) =>{
+        return (el.name == "Sam");
+           })
+  console.log(new_students);
+      let [...new_students1] = new Set(students.map((el) => {
+          return (el.name)
+          }));
+      console.log(new_students1);
+      
+  ====================================================================================================================================    
+
+
+//====================DOM Content loaded===========================
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVASCRIPT BASICS</title>
+  <script> 
+    document.addEventListener('DOMContentLoaded', () => {
+      let oldh1 = document.getElementById('js');
+      let butn = oldh1.children[0];
+      let heading = oldh1.children[1];    //DOMContentLoaded this wont render the css and changes after once loaded....
+      let image1 = oldh1.children[2];
+
+
+      heading.innerHTML = `<h2>JAVASCRIPT DOM!!!!!!!!</h2>`
+      console.log(`image details ${image1.offsetWidth}, ${image1.offsetHeight}`);
+    })  
+    window.onload =function (){
+      console.log("load");
+    }
+    window.addEventListener('load',()=>{   // load event load all the content like css,changes,etc,.... after once loaded.....
+      console.log("load2");
+    })
+  </script>
+
+</head>
+
+<body id="js">
+  <button class="btn btn-warning">casdasas</button>
+  <h1>JAVASCRIPT BASICS</h1>
+  <img scr="pic2"/>-----------some images is to be added here
+  <!-- <script src="domScript.js"></script> -->
+  <!-- <script>
+      // document.addEventListener('DOMContentLoaded', (() =>{
+      //   alert("DOMContentLoaded")
+      // }))
+
+      let oldh1 = document.getElementById('js');
+      // console.log(oldh1);
+      oldh1.innerHTML=`<h2>JAVASCRIPT DOM</h2>` -->
+  </script>
+</body>
+
+</html>
